@@ -4,8 +4,8 @@ Sistema conversacional inteligente desenvolvido para automatizar atendimento, su
 
 🧭 Visão Geral
 
-O IA Agent é um agente conversacional criado para reduzir tarefas repetitivas, padronizar o atendimento e aumentar a produtividade operacional.
-Foi desenvolvido com arquitetura moderna, modular e totalmente preparada para integração com IA (Claude AI) e canais multicanal, como WhatsApp.
+O IA Agent reduz tarefas repetitivas, padroniza o atendimento e aumenta a produtividade operacional.
+Foi projetado com arquitetura moderna, modular e pronta para IA avançada (Claude AI) e operação multicanal (WhatsApp, WebChat e mais).
 
 🎯 Objetivos do Projeto
 ✔️ Atendimento
@@ -14,44 +14,44 @@ Responder dúvidas frequentes
 
 Automatizar respostas pré-definidas
 
-Realizar suporte técnico básico
+Suporte técnico básico
 
 ✔️ Vendas
 
-Captar, qualificar e registrar leads
+Captar e qualificar leads
 
-Enviar informações de serviços e produtos
+Registrar conversas e intenções
 
-✔️ Suporte e Backoffice
+Enviar informações de produtos/serviços
 
-Abrir e consultar chamados (futuro – integração com xamado-backend)
+✔️ Suporte & Backoffice
 
-Enviar lembretes automáticos (segunda via, avisos, follow-up)
+Abrir e consultar chamados (futuro – xamado-backend)
 
-Ajudar com FAQ interno da empresa
+Enviar lembretes automáticos
 
-⚙️ Status do Projeto (Situação Atual)
+FAQ interno
+
+⚙️ Status do Projeto
 🔧 Infraestrutura já construída
 
-Backend em Node.js + Express
+Backend: Node.js + Express
 
-Banco de dados PostgreSQL
+Banco: PostgreSQL
 
-Ambiente completo usando Docker Compose
+Ambiente: Docker Compose
 
-Sistema de logs (Pino)
+Logs: Pino
 
-Autenticação Basic Auth
+Auth: Basic Auth
 
-Migrações automáticas SQL
+Migrações SQL automáticas
 
-Estrutura modular profissional
+Arquitetura modular e escalável
 
-🧠 Inteligência Artificial (futuro próximo)
+🧠 Inteligência Artificial (em preparação)
 
-Preparado para Claude AI (Anthropic)
-
-IA responderá com base em:
+IA baseada em Claude AI, com respostas estruturadas usando:
 
 Documentos oficiais
 
@@ -59,7 +59,7 @@ Procedimentos internos
 
 Políticas da empresa
 
-Só será ativada após envio/autorização dos documentos corporativos
+⚠️ A IA só será ativada após o envio dos documentos oficiais.
 
 🔌 Integrações Futuras
 
@@ -70,15 +70,17 @@ xamado-backend
 Painel administrativo com métricas
 
 ⚡ Stack Técnica
-Componente	Tecnologia
-Backend	Node.js (ESM)
-Framework	Express
-Banco	PostgreSQL
-Migrations	SQL puro
-Logs	Pino
-Auth	Basic Auth
-IA (futuro)	Claude AI
-Ambiente	Docker Compose
+| Componente | Tecnologia      |
+|-----------|-----------------|
+| Backend   | Node.js (ESM)   |
+| Framework | Express         |
+| Banco     | PostgreSQL      |
+| Migrations| SQL puro        |
+| Logs      | Pino            |
+| Auth      | Basic Auth      |
+| IA        | Claude AI       |
+| Ambiente  | Docker Compose  |
+
 📁 Estrutura de Pastas
 src/
  ┣ controllers/
@@ -97,9 +99,9 @@ package.json
 .env (não versionado)
 README.md
 
-🧾 Configuração do Arquivo .env
+🧾 Configuração do .env
 
-Crie o arquivo .env na raiz do projeto:
+Crie o arquivo .env na raiz:
 
 # API
 PORT=3000
@@ -126,32 +128,30 @@ PGPASSWORD=postgres
 BASIC_AUTH_USER=admin
 BASIC_AUTH_PASS=trocar123
 
-📌 Importante
 
-Para rodar com Docker: PGHOST=postgres
+📌 Importante:
 
-Para rodar local sem Docker: PGHOST=localhost
+Com Docker → PGHOST=postgres
+
+Sem Docker → PGHOST=localhost
 
 🐘 Banco de Dados
 
-As tabelas são criadas automaticamente:
+Tabelas criadas automaticamente:
 
 conversations
-
 messages
-
 logs
-
 documents
-
 document_versions
 
-As migrações ficam em:
+
+Migrações:
 
 src/db/migrations.sql
 
 
-E são executadas via:
+Executar:
 
 npm run migrate
 
@@ -201,10 +201,11 @@ volumes:
   "migrate": "node src/db/migrate.js"
 }
 
-Script	Função
+Funções
+Script	Descrição
 npm run dev	Inicia API com reload automático
 npm start	Inicia API em produção
-npm run migrate	Executa as migrações SQL
+npm run migrate	Executa migrações SQL
 🧑‍💻 Guia de Instalação
 📌 1. Pré-requisitos
 
@@ -214,7 +215,7 @@ Git
 
 Node.js 18+
 
-Docker Desktop + Docker Compose
+Docker Desktop + Compose
 
 VSCode (recomendado)
 
@@ -229,25 +230,25 @@ npm install
 cp .env.example .env
 
 
-Ou crie manualmente e cole as variáveis acima.
+Ou criar manualmente.
 
-📌 5. Rodar com Docker (RECOMENDADO)
+📌 5. Rodar com Docker (Recomendado)
 docker-compose up --build
 
 
-Fluxo automático:
+Fluxo:
 
 PostgreSQL inicia
 
-API inicia
+API sobe
 
-Migrações são executadas
+Migrações executam
 
 API disponível em:
 
 👉 http://localhost:3000
 
-📌 6. Rodar Sem Docker (opcional)
+📌 6. Rodar Sem Docker
 
 Criar banco:
 
@@ -270,7 +271,7 @@ npm run dev
 
 📈 Benefícios Esperados
 
-Redução de carga operacional
+Redução da carga operacional
 
 Atendimento padronizado
 
@@ -278,11 +279,11 @@ Registro centralizado
 
 Base pronta para IA avançada
 
-Preparado para canais multicanais (WhatsApp / Web Chat)
+Preparado para WhatsApp / Web Chat
 
-Preparado para integração com sistema de chamados
+Pronto para integração com sistema de chamados
 
-🚀 Próximos Passos (Roadmap)
+🚀 Roadmap
 
 🔗 Integração com xamado-backend
 
@@ -290,11 +291,11 @@ Preparado para integração com sistema de chamados
 
 🤖 Ativar IA Claude
 
-💬 Integração WhatsApp Cloud API
+💬 Integração com WhatsApp Cloud API
 
 📊 Painel administrativo com métricas
 
 📋 Resumo Final
 
-O IA Agent possui uma estrutura sólida e profissional, pronta para escalar e receber IA avançada.
-Após ativação da IA e integração com os documentos oficiais, o sistema poderá entrar em testes reais.
+O IA Agent possui uma base sólida, escalável e moderna.
+Assim que a IA for ativada e os documentos oficiais indexados, o sistema estará pronto para testes reais.
