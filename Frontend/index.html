@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Agente IA</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>🤖 Painel Administrativo — Agente IA</h1>
+    <div id="status-indicator" class="status">Verificando status...</div>
+  </header>
+
+  <main>
+    <section class="auth-section">
+      <h2>🔐 Autenticação</h2>
+      <input type="text" id="authUser" placeholder="Usuário">
+      <input type="password" id="authPass" placeholder="Senha">
+      <button id="connectBtn">Conectar</button>
+    </section>
+
+    <section class="actions-section">
+      <h2>⚙️ Ações</h2>
+      <button id="btnReindex">Reindexar Base de Conhecimento</button>
+      <button id="btnCheckHealth">Verificar Status</button>
+    </section>
+
+    <section class="upload-section">
+      <h2>📂 Upload de Documentos Oficiais</h2>
+      <label for="fileInput">Arquivo:</label>
+      <input type="file" id="fileInput" title="Selecionar arquivo" placeholder="Selecione um arquivo" aria-label="Arquivo para upload" />
+      <select id="docType" aria-label="Tipo de documento">
+        <option value="policy">Política</option>
+        <option value="faq">FAQ</option>
+        <option value="price_table">Tabela de Preço</option>
+        <option value="tutorial">Tutorial</option>
+      </select>
+      <button id="btnUpload">Enviar Documento</button>
+    </section>
+
+    <section class="logs-section">
+      <h2>🧾 Logs e Histórico</h2>
+      <button id="btnLoadLogs">Carregar Logs</button>
+      <pre id="logsOutput">Nenhum log carregado ainda.</pre>
+    </section>
+
+    <section class="conversations-section">
+      <h2>💬 Conversas Recentes</h2>
+      <button id="btnLoadConversations">Carregar Conversas</button>
+      <div id="conversationsList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Desenvolvido para integração com Claude AI + WhatsApp API + Node.js + PostgreSQL | v1.0 🚀</p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
