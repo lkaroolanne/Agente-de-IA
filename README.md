@@ -1,87 +1,76 @@
-🤖 IA Agent – Assistente Inteligente de Atendimento e Suporte
+# 🤖 **IA Agent – Assistente Inteligente de Atendimento e Suporte**
 
-Sistema conversacional inteligente desenvolvido para automatizar atendimento, suporte e vendas usando arquitetura escalável e pronta para IA avançada.
+Sistema conversacional inteligente desenvolvido para automatizar atendimento, suporte e vendas usando uma arquitetura escalável e preparada para IA avançada.
 
-🧭 Visão Geral
+---
 
-O IA Agent reduz tarefas repetitivas, padroniza o atendimento e aumenta a produtividade operacional.
-Foi projetado com arquitetura moderna, modular e pronta para IA avançada (Claude AI) e operação multicanal (WhatsApp, WebChat e mais).
+## 🧭 **Visão Geral**
 
-🎯 Objetivos do Projeto
-✔️ Atendimento
+O **IA Agent** reduz tarefas repetitivas, padroniza o atendimento e melhora a produtividade operacional.  
+Criado com arquitetura moderna, modular e pronta para **Claude AI** e canais multicanal.
 
-Responder dúvidas frequentes
+---
 
-Automatizar respostas pré-definidas
+## 🎯 **Objetivos do Projeto**
 
-Suporte técnico básico
+### ✔️ **Atendimento**
+- Responder dúvidas frequentes  
+- Automatizar respostas pré-definidas  
+- Realizar suporte técnico básico  
 
-✔️ Vendas
+### ✔️ **Vendas**
+- Captar e qualificar leads  
+- Registrar intenções e conversas  
+- Enviar informações de produtos e serviços  
 
-Captar e qualificar leads
+### ✔️ **Suporte & Backoffice**
+- Abertura e consulta de chamados *(integração futura com xamado-backend)*  
+- Lembretes automáticos  
+- FAQ interno inteligente  
 
-Registrar conversas e intenções
+---
 
-Enviar informações de produtos/serviços
+## ⚙️ **Status Atual do Projeto**
 
-✔️ Suporte & Backoffice
+### 🔧 **Infraestrutura construída**
+- Node.js + Express  
+- PostgreSQL  
+- Docker Compose  
+- Logs estruturados com Pino  
+- Basic Auth  
+- Migrações SQL  
+- Arquitetura modular  
 
-Abrir e consultar chamados (futuro – xamado-backend)
+### 🧠 **Inteligência Artificial (fase de preparação)**
+- Integração com **Claude AI**  
+- Respostas baseadas em documentos oficiais  
+- IA será ativada apenas mediante autorização  
 
-Enviar lembretes automáticos
+### 🔌 **Integrações planejadas**
+- WhatsApp Cloud API  
+- xamado-backend  
+- Painel administrativo  
 
-FAQ interno
+---
 
-⚙️ Status do Projeto
-🔧 Infraestrutura já construída
+## ⚡ **Stack Técnica**
 
-Backend: Node.js + Express
+| Componente | Tecnologia |
+|-----------|------------|
+| Backend | Node.js (ESM) |
+| Framework | Express |
+| Banco | PostgreSQL |
+| Migrations | SQL puro |
+| Logs | Pino |
+| Autenticação | Basic Auth |
+| IA (futuro) | Claude AI |
+| Ambiente | Docker Compose |
 
-Banco: PostgreSQL
+---
 
-Ambiente: Docker Compose
+## 📁 **Estrutura de Pastas**
 
-Logs: Pino
-
-Auth: Basic Auth
-
-Migrações SQL automáticas
-
-Arquitetura modular e escalável
-
-🧠 Inteligência Artificial (em preparação)
-
-IA baseada em Claude AI, com respostas estruturadas usando:
-
-Documentos oficiais
-
-Procedimentos internos
-
-Políticas da empresa
-
-⚠️ A IA só será ativada após o envio dos documentos oficiais.
-
-🔌 Integrações Futuras
-
-WhatsApp Cloud API
-
-xamado-backend
-
-Painel administrativo com métricas
-
-⚡ Stack Técnica
-| Componente | Tecnologia      |
-|-----------|-----------------|
-| Backend   | Node.js (ESM)   |
-| Framework | Express         |
-| Banco     | PostgreSQL      |
-| Migrations| SQL puro        |
-| Logs      | Pino            |
-| Auth      | Basic Auth      |
-| IA        | Claude AI       |
-| Ambiente  | Docker Compose  |
-
-📁 Estrutura de Pastas
+```txt
 src/
  ┣ controllers/
  ┣ db/
@@ -99,10 +88,7 @@ package.json
 .env (não versionado)
 README.md
 
-🧾 Configuração do .env
-
-Crie o arquivo .env na raiz:
-
+** Configuração do .env **
 # API
 PORT=3000
 NODE_ENV=development
@@ -129,7 +115,7 @@ BASIC_AUTH_USER=admin
 BASIC_AUTH_PASS=trocar123
 
 
-📌 Importante:
+📌 Observação
 
 Com Docker → PGHOST=postgres
 
@@ -140,22 +126,20 @@ Sem Docker → PGHOST=localhost
 Tabelas criadas automaticamente:
 
 conversations
+
 messages
+
 logs
+
 documents
+
 document_versions
 
-
-Migrações:
-
-src/db/migrations.sql
-
-
-Executar:
+Rodar migrações:
 
 npm run migrate
 
-🧱 Docker Compose (Ambiente Completo)
+🧱 Docker Compose
 version: "3.9"
 
 services:
@@ -201,63 +185,40 @@ volumes:
   "migrate": "node src/db/migrate.js"
 }
 
-Funções
-Script	Descrição
-npm run dev	Inicia API com reload automático
-npm start	Inicia API em produção
-npm run migrate	Executa migrações SQL
 🧑‍💻 Guia de Instalação
 📌 1. Pré-requisitos
-
-Instale no computador:
 
 Git
 
 Node.js 18+
 
-Docker Desktop + Compose
+Docker Desktop
 
-VSCode (recomendado)
+VSCode
 
-📌 2. Clonar o Repositório
+📌 2. Clonar repositório
 git clone https://github.com/seu-usuario/ia-whatsapp-agent.git
 cd ia-whatsapp-agent
 
-📌 3. Instalar Dependências
+📌 3. Instalar dependências
 npm install
 
-📌 4. Criar Arquivo .env
+📌 4. Criar .env
 cp .env.example .env
 
-
-Ou criar manualmente.
-
-📌 5. Rodar com Docker (Recomendado)
+📌 5. Rodar com Docker (recomendado)
 docker-compose up --build
 
 
-Fluxo:
-
-PostgreSQL inicia
-
-API sobe
-
-Migrações executam
-
 API disponível em:
 
-👉 http://localhost:3000
+http://localhost:3000
 
-📌 6. Rodar Sem Docker
+📌 6. Rodar sem Docker
 
 Criar banco:
 
 createdb ia_agent
-
-
-Ajustar .env:
-
-PGHOST=localhost
 
 
 Rodar migrações:
@@ -279,23 +240,23 @@ Registro centralizado
 
 Base pronta para IA avançada
 
-Preparado para WhatsApp / Web Chat
+Preparado para WhatsApp e Web Chat
 
-Pronto para integração com sistema de chamados
+Integração futura com sistema de chamados
 
 🚀 Roadmap
 
 🔗 Integração com xamado-backend
 
-📄 Indexação dos documentos oficiais
+📄 Indexação de documentos oficiais
 
-🤖 Ativar IA Claude
+🤖 IA Claude ativada
 
-💬 Integração com WhatsApp Cloud API
+💬 WhatsApp Cloud API
 
 📊 Painel administrativo com métricas
 
 📋 Resumo Final
 
-O IA Agent possui uma base sólida, escalável e moderna.
-Assim que a IA for ativada e os documentos oficiais indexados, o sistema estará pronto para testes reais.
+O IA Agent possui uma base sólida, moderna e totalmente preparada para integrações avançadas com IA.
+Após a ativação da IA e indexação dos documentos, o sistema estará pronto para testes reais e ambiente de produção.
